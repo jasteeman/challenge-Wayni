@@ -36,8 +36,8 @@ Esta aplicación web permite importar y digitalizar sus procesos de importación
 1.  Clona el repositorio:
 
     ```bash
-    git clone [https://github.com/jasteeman/tp-libros](https://github.com/jasteeman/tp-libros)
-    cd tp-libros
+    git clone [https://github.com/jasteeman/challenge-Wayny](https://github.com/jasteeman/challenge-Wayni.git)
+    cd challenge-Wayni
     ```
 
 2.  Construye y levanta los contenedores con Docker Compose:
@@ -52,7 +52,7 @@ Esta aplicación web permite importar y digitalizar sus procesos de importación
 
 El proyecto está organizado de la siguiente manera:
 
-tp-libros/
+challenge-Wayni/
 ├── backend/
 │   ├── src/
 │   │   ├── auth/

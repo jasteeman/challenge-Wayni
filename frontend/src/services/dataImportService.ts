@@ -31,15 +31,12 @@ export const importData = async (file: File): Promise<string | null> => {
   try {
     const formData = new FormData();
     formData.append('archivo', file);
-    console.log("FormData antes del envío:", formData);
-    console.log("File object:", file);
     const response = await instance.post<string>('/deudores', formData, {
       headers: {
         ...getToken(),
         'Content-Type': 'multipart/form-data',
       },
     });
-    console.log("Respuesta del servidor:", response);
     return response.data;
   } catch (error: any) {
     handleRequestError(error);

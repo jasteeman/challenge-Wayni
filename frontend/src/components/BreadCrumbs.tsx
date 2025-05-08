@@ -8,8 +8,8 @@ export const Breadcrumbs = () => {
   // Definición de los "crumbs" basados en la ruta actual
   const crumbs = [
     { path: '/Home', label: 'Home' }, 
-    { path: '/entidad', label: 'Gestión de Empresas' }, 
-    id ? { path: `/entidad/deudores/${id}`, label: 'Deudores' } : null,
+    { path: '/entidades', label: 'Gestión de Entidades' }, 
+    id ? { path: `/entidades/deudores/${id}`, label: 'Deudores' } : null,
     { path: '/users', label: 'Gestión de Usuarios' },
   ].filter(crumb => crumb !== null && location.pathname.includes(crumb.path)); // Filtra los "crumbs" por la ruta actual y no nulos
 

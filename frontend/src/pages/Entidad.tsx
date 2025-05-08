@@ -164,7 +164,6 @@ export const GestionEntidades = () => {
   const handleVerDeudores = (idEntidad: string) => {
     setSelectedEntidadId(idEntidad);
     navigate(`/entidades/deudores/${idEntidad}`);
-    console.log(`Ver deudores de la entidad con ID: ${idEntidad}`);
   };
 
   const getColumns = useCallback((): ColumnsType<Entidad> => [
