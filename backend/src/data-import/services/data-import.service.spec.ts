@@ -144,9 +144,8 @@ describe('DataImportService', () => {
       (readline.createInterface as jest.Mock).mockReturnValue(mockReadline);
 
       await dataImportService.importarDatos('cualquier/ruta/de/archivo.txt');
-
-      // Verificar que solo se procesó la línea válida
-      expect(mockDeudoresService.saveOrUpdate).toHaveBeenCalledTimes(2);
+ 
+      expect(mockDeudoresService.saveOrUpdate).toHaveBeenCalledTimes(1);
     });
   });
 });
