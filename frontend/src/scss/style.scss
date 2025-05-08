@@ -1,0 +1,94 @@
+// If you want to override variables do it here
+@import "variables";
+
+$enable-ltr: true;
+$enable-rtl: true;
+
+// Import CoreUI for React components library
+@import "@coreui/coreui/scss/coreui";
+
+// Import Chart.js custom tooltips styles
+@import "@coreui/chartjs/scss/coreui-chartjs";
+
+@import "layout";
+@import "example";
+
+// If you want to add custom CSS you can put it here.
+@import "custom";
+
+// formato para login
+// @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+
+.btn-buscar :hover{
+  color: #321fdb;
+}
+
+.float_buttom {
+  position: fixed;
+  width: 60px;
+  height: 60px;
+  bottom: 40px;
+  right: 40px;
+  background-color: #fff;
+  border: 1px solid #321fdb;;
+  color: #321fdb;
+  border-radius: 50px;
+  text-align: center;
+  box-shadow: 2px 2px 3px #999;
+  padding-top: 5px;
+}
+.float_buttom :hover{
+  color: #fff;
+  background-color: #321fdb;
+}
+.card_login {
+    height: 380px;
+    width: 350px;
+    background-color: #fff;
+    position: relative;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+    // font-family: 'Poppins', sans-serif;
+    border-radius: 10px;
+    border: 1px solid indigo;
+    padding: 20px;
+  }
+.input-text {
+    position: relative;
+    margin-top: 30px;
+  }
+  input[type='text'] {
+    height: 45px;
+    width: 100%;
+    border: none;
+    border-radius: 9px;
+    border: 1px solid #e0e3e9;
+    padding: 0 10px;
+    padding-left: 30px;
+    outline: 0;
+    font-size: 13px;
+  }
+  input[type='password'] {
+    height: 45px;
+    width: 100%;
+    border: none;
+    border-radius: 9px;
+    border: 1px solid #e0e3e9;
+    padding: 0 10px;
+    padding-left: 30px;
+    padding-right: 27px;
+    outline: 0;
+  }
+.warning {
+  border: 1px solid red !important;
+    animation-name: parpadeo;
+    animation-duration: 1s;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: 2;
+  }
+  @keyframes parpadeo {
+    from {background: rgb(233, 226, 226);}
+    to {border: 1px solid red !important;}
+  }
+  .type_password {
+    border: 1px solid red !important;
+  }

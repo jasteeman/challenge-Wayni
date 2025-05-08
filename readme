@@ -1,0 +1,123 @@
+# Gestión de Deudores
+
+Esta aplicación web permite importar y digitalizar sus procesos de importación, incluyendo funcionalidades avanzadas de gestión y análisis de datos.
+
+## Tabla de Contenidos
+
+-   [Tecnologías Utilizadas](#tecnologías-utilizadas)
+-   [Requisitos Previos](#requisitos-previos)
+-   [Configuración con Docker](#configuración-con-docker)
+-   [Estructura del Proyecto](#estructura-del-proyecto)
+-   [Importación de Datos](#importación-de-datos)
+-   [Gestión de Deudores](#gestión-de-deudores)
+-   [Gestión de Entidades](#gestión-de-entidades)
+-   [Registro e Inicio de Sesión](#registro-e-inicio-de-sesión)
+-   [Arquitectura del Sistema](#arquitectura-del-sistema)
+-   [Modelo de Datos](#modelo-de-datos)
+-   [Testing](#testing)
+-   [Despliegue](#despliegue)
+-   [Documentación de la API](#documentación-de-la-api)
+
+## Tecnologías Utilizadas
+
+-   Frontend: React (TypeScript)
+-   Backend: NestJS (TypeScript), JWT
+-   Base de Datos: MongoDB
+-   Docker, Docker Compose
+
+## Requisitos Previos
+
+-   Docker y Docker Compose instalados en tu sistema.
+-   Node.js y npm (opcional, para desarrollo local sin Docker).
+-   Para correr los tests, es necesario tener instalado MongoDB o tener levantado el docker.
+
+## Configuración con Docker
+
+1.  Clona el repositorio:
+
+    ```bash
+    git clone [https://github.com/jasteeman/tp-libros](https://github.com/jasteeman/tp-libros)
+    cd tp-libros
+    ```
+
+2.  Construye y levanta los contenedores con Docker Compose:
+
+    ```bash
+    docker-compose up --build -d
+    ```
+
+3.  El frontend estará disponible en `http://localhost` y el backend en `http://localhost:3000`. La base de datos MongoDB estará disponible en el puerto 27017 dentro del contenedor.
+
+## Estructura del Proyecto
+
+El proyecto está organizado de la siguiente manera:
+
+tp-libros/
+├── backend/
+│   ├── src/
+│   │   ├── auth/
+│   │   ├── deudores/
+│   │   ├── entidades/
+│   │   ├── data-import/
+│   │   ├── usuarios/
+│   │   ├── main.ts
+│   ├── nest-cli.json
+│   ├── package.json
+├── frontend/
+│   ├── src/
+│   │   ├── App.tsx
+│   │   └── ...
+├── docker-compose.yml
+└── README.md
+
+## Importación de Datos
+
+-   El backend incluye un módulo para la importación de datos desde archivos de texto sin formato.  Actualmente, este módulo se utiliza para importar datos de deudores y entidades.
+-   El proceso de importación se inicia a través de un endpoint de la API.
+
+## Gestión de Deudores
+
+-   El backend proporciona funcionalidades para la gestión de deudores, incluyendo:
+    -   Creación y actualización de deudores.
+    -   Listado de deudores con paginación y búsqueda.
+    -   Obtención de un deudor por ID.
+    -   Eliminación de un deudor por ID.
+
+## Gestión de Entidades
+
+-   El backend proporciona funcionalidades para la gestión de entidades, incluyendo:
+    -   Creación y actualización de entidades.
+    -   Listado de entidades con paginación y búsqueda.
+    -   Obtención de una entidad por ID.
+    -   Eliminación de una entidad por ID.
+
+## Registro e Inicio de Sesión
+
+-   El frontend permite a los usuarios registrarse e iniciar sesión.
+-   El backend utiliza JWT para la autenticación y autorización de usuarios.
+
+## Arquitectura del Sistema
+
+-   El backend utiliza una arquitectura modular y escalable, siguiendo los principios SOLID.
+-   Se implementa un sistema de logging para auditoría de operaciones.
+-   Se implementa manejo de errores tanto en el frontend como en el backend.
+
+## Modelo de Datos
+
+-   Se utiliza MongoDB.
+-   El modelo de datos incluye las siguientes entidades principales:
+    -   Deudor: Representa a un deudor con información como ID, situación desfavorable y suma de préstamos.
+    -   Entidad: Representa a una entidad con información como ID y suma de préstamos.
+    -   Usuario: Representa a un usuario del sistema.
+
+## Testing
+
+-   Se han implementado tests unitarios para los servicios y controladores del backend utilizando Jest.
+
+## Despliegue
+
+-   Se proporciona un `docker-compose.yml` para el despliegue local de la aplicación utilizando Docker.
+
+## Documentación de la API
+
+-   La API está documentada y accesible a través de Swagger en la ruta `/api` del backend. Por ejemplo: `http://localhost:3000/api`.

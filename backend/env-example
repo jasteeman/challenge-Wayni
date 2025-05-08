@@ -1,0 +1,5 @@
+MONGODB_URI=mongodb://localhost:27017
+MONGODB_NAME=mi_basededatos
+MONGODB_USER=
+MONGODB_PASSWORD=
+JWT_SECRET=mi_secreto_jwt
